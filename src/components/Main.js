@@ -23,12 +23,12 @@ class Main extends React.Component {
         <p>My name is {this.state.name}</p>
         <ol>
           {
-            this.state.beasts.map((HornedBeast, beastIndex) => (
+            this.state.beasts.map((beast, beastIndex) => (
               <li key={beastIndex}>
                 <HornedBeast
-                name={HornedBeast.name}
+                name={beast.name}
 
-                {...HornedBeast}
+                {...beast}
                 />
               </li>
             ))
