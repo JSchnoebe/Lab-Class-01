@@ -1,6 +1,23 @@
 import React from 'react';
 
 class HornedBeast extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      votes: 0,
+    };
+  }
+
+  addVoteClickHandler = () => {
+
+    this.setState({
+      votes: this.state.votes + 1,
+      lastUpdated: new Date(),
+    });
+
+    console.log(this.state);
+  };
 
   render () {
 
