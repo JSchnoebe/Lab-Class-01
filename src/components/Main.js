@@ -1,4 +1,5 @@
 import React from 'react';
+import { CardColumns } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
 import animalData from '../data.json';
 
@@ -19,23 +20,21 @@ class Main extends React.Component {
   render () {
 
     return (
-      <div>
+      <>
         <p>My name is {this.state.name}</p>
-        <ol>
-          {
-            this.state.beasts.map((beast, beastIndex) => (
-              <li key={beastIndex}>
+          <CardColumns>
+            {animalData.map((beast, i) => (
                 <HornedBeast
                 name={beast.name}
-
-                {...beast}
+                key={i}
+                beastIndex={i}
+                displayModalForIndex={this.props.handleSelectBeast}
+                title={beast.title}
+                imageUrl={beast.image_url}
                 />
-              </li>
-            ))
-          }
-        </ol>
-            
-      </div>
+            ))}
+           </CardColumns>
+      </>
     )
   }
 }
