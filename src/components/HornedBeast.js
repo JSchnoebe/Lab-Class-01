@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-
+import './HornedBeast.css';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -30,17 +30,17 @@ class HornedBeast extends React.Component {
 
     return (
       <div>
-      <h2>{this.props.title}</h2>
-      <strong>{this.props.name} ❤️ = {this.state.votes} votes!</strong>
-      <Card style={{ width: '18rem' }} onClick={this.showModal}>
-  <Card.Img variant="top" src={this.props.imageUrl} onClick={this.addVoteClickHandler}/>
-  <Card.Body>
-    <Card.Title>{this.props.title}</Card.Title>
-    <Card.Text>
-      {this.props.description}
-    </Card.Text>
-  </Card.Body>
-</Card>
+        <h2>{this.props.title}</h2>
+        <strong>{this.props.name} ❤️ = {this.state.votes} votes!</strong>
+        <Card className="horned-card" onClick={this.showModal}>
+          <Card.Img variant="top" src={this.props.imageUrl} onClick={this.addVoteClickHandler} />
+          <Card.Body>
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Text>
+              {this.props.description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     )
   }
