@@ -21,6 +21,7 @@ class HornedBeast extends React.Component {
   };
 
   showModal = () => {
+    console.log('did this run the showModal?', this.props.beastIndex);
       this.props.displayModalForIndex(this.props.beastIndex);
     }
 
@@ -29,21 +30,23 @@ class HornedBeast extends React.Component {
   render () {
 
     return (
-      <div>
-      <h2>{this.props.title}</h2>
-      <strong>{this.props.name} ❤️ = {this.state.votes} votes!</strong>
-      <Card style={{ width: '18rem' }} onClick={this.showModal}>
-  <Card.Img variant="top" src={this.props.imageUrl} onClick={this.addVoteClickHandler}/>
-  <Card.Body>
-    <Card.Title>{this.props.title}</Card.Title>
-    <Card.Text>
-      {this.props.description}
-    </Card.Text>
-  </Card.Body>
+      
+      <Card style={{width:'18rem'}} onClick={this.showModal}>
+
+          <Card.Img variant="top" src={this.props.imageUrl} onClick={this.addVoteClickHandler}/>
+          <Card.Body>
+             <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>
+            {this.props.name} ❤️ = {this.state.votes} votes!
+            {this.props.description}
+          </Card.Text>
+     </Card.Body>
 </Card>
-      </div>
+
+
+      
     )
   }
 }
 
-export default HornedBeast
+export default HornedBeast;

@@ -17,8 +17,9 @@ class App extends React.Component {
   }
 
   handleSelectBeast = beastIndex => {
+    console.log('inside main handle select', beastIndex);
     this.setState({
-      SelectedBeast: animalData[beastIndex],
+      selectedBeast: animalData[beastIndex],
       showModal: true,
     });
   }
@@ -39,8 +40,6 @@ class App extends React.Component {
     {/* Your Main needs to be able handle the selected beast */}
     <Main beasts={animalData}
           handleSelectBeast={this.handleSelectBeast}
-
-    
     />
 
     <Footer theme={theme} />
