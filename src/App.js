@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import SelectedBeast from './components/SelectedBeast';
 import animalData from './data.json'; 
-import { render } from '@testing-library/react';
 
 class App extends React.Component {
   constructor(props) {
