@@ -36,10 +36,16 @@ class App extends React.Component {
     <div>
    
     <Header theme={theme}/>
-    <Main beasts={animalData}/>
-    <Footer theme={theme}
-      handleSelectBeast={this.handleSelectBeast}
+    {/* Your Main needs to be able handle the selected beast */}
+    <Main beasts={animalData}
+          handleSelectBeast={this.handleSelectBeast}
+
+    
     />
+
+    <Footer theme={theme} />
+
+
     <SelectedBeast
       beast={this.state.selectedBeast}
       show={this.state.showModal}

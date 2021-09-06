@@ -24,14 +24,14 @@ class Main extends React.Component {
         <p>My name is {this.state.name}</p>
           <CardColumns>
             {animalData.map((beast, i) => (
-                <HornedBeast
+              <HornedBeast
                 name={beast.name}
                 key={i}
                 beastIndex={i}
                 displayModalForIndex={this.props.handleSelectBeast}
                 title={beast.title}
                 imageUrl={beast.image_url}
-                />
+              />
             ))}
            </CardColumns>
       </>
