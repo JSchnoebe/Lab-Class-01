@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
 import SelectedBeast from './components/SelectedBeast';
-import animalData from './data.json'; 
+import animalData from './data.json';
 import { render } from '@testing-library/react';
 
 class App extends React.Component {
@@ -20,7 +20,7 @@ class App extends React.Component {
 
   handleSelectBeast = beastIndex => {
     this.setState({
-      SelectedBeast: animalData[beastIndex],
+      selectedBeast: animalData[beastIndex],
       showModal: true,
     });
   }
@@ -32,23 +32,23 @@ class App extends React.Component {
 
   render() {
     let theme = 'dark';
- 
 
-  return (
-    <div>
-   
-    <Header theme={theme}/>
-    <Main beasts={animalData}/>
-    <Footer theme={theme}
-      handleSelectBeast={this.handleSelectBeast}
-    />
-    <SelectedBeast
-      beast={this.state.selectedBeast}
-      show={this.state.showModal}
-      handleClose={this.handleClose}
-    />
-    </div>
-  );
+
+    return (
+      <div>
+
+        <Header theme={theme} />
+        <Main beasts={animalData}
+          handleSelectBeast={this.handleSelectBeast}
+        />
+        <Footer theme={theme} />
+        <SelectedBeast
+          beast={this.state.selectedBeast}
+          show={this.state.showModal}
+          handleClose={this.handleClose}
+        />
+      </div>
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardColumns } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
 import animalData from '../data.json';
 
@@ -17,23 +17,26 @@ class Main extends React.Component {
     };
   }
 
-  render () {
+  render() {
 
     return (
       <>
         <p>My name is {this.state.name}</p>
-          <CardColumns>
+        <Container>
+          <Row>
             {animalData.map((beast, i) => (
+              <Col key={i}>
                 <HornedBeast
-                name={beast.name}
-                key={i}
-                beastIndex={i}
-                displayModalForIndex={this.props.handleSelectBeast}
-                title={beast.title}
-                imageUrl={beast.image_url}
+                  name={beast.name}
+                  beastIndex={i}
+                  displayModalForIndex={this.props.handleSelectBeast}
+                  title={beast.title}
+                  imageUrl={beast.image_url}
                 />
+              </Col>
             ))}
-           </CardColumns>
+          </Row>
+        </Container>
       </>
     )
   }
